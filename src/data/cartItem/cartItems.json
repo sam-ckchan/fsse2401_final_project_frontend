@@ -1,0 +1,26 @@
+[
+  {
+    "pid": 124,
+    "name": "Dell XPS 15 9520",
+    "price": 30012.2415,
+    "stock": 99,
+    "image_url": "https://astringo-rugged.com/wp-content/uploads/2023/04/New-Project-49.png",
+    "cart_quantity": 10
+  },
+  {
+    "pid": 128,
+    "name": "ASUS Zenbook Pro 16X OLED",
+    "price": 23580.0000,
+    "stock": 40,
+    "image_url": "https://dlcdnwebimgs.asus.com/gain/6ed14ba0-08ec-4668-b9b5-ac79900e2a7a/w800",
+    "cart_quantity": 3
+  },
+  {
+    "pid": 129,
+    "name": "MSI Summit E13 Flip EVO",
+    "price": 9999.9999,
+    "stock": 99,
+    "image_url": "https://storage-asset.msi.com/global/picture/image/feature/nb/Summit/Summit_E13_Flip_Evo_A12M/images/EVO-cpu.png",
+    "cart_quantity": 1
+  }
+]

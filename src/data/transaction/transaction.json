@@ -1,0 +1,35 @@
+{
+  "tid": 1,
+  "buyer_uid": 1,
+  "datetime": "20240323T19:03:90",
+  "status": "SUCCESS",
+  "total": 3349003.04,
+  "items": [
+    {
+      "tpid": 1,
+      "quantity": 10,
+      "product": {
+        "pid": 123,
+        "name": "MSI GS76 Stealth",
+        "description": null,
+        "price": 34777.89,
+        "stock": 100,
+        "image_url": "https://www.price.com.hk/space/product/503000/503587_xsvt4y_4.png"
+      },
+      "subtotal": 347778.89
+    },
+    {
+      "tpid": 2,
+      "quantity": 100,
+      "product": {
+        "pid": 124,
+        "name": "Dell XPS 15 9520 ",
+        "description": "(XPS 15 完美平衡尺寸與效能二項需求，為更需要創意的專案提供動力。第 12 代 Intel Core 處理器)",
+        "price": 30012.24,
+        "stock": 100,
+        "image_url": "https://www.price.com.hk/space/product/557000/557771_tcd4mq_4.jpg"
+      },
+      "subtotal": 3001224.15
+    }
+  ]
+}

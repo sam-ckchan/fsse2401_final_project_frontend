@@ -1,0 +1,66 @@
+[
+  {
+    "pid": 123,
+    "description": null,
+    "image_url": "https://asset.msi.com/resize/image/global/product/product_161967937604474731adf5b991b22764d07f5936b5.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+    "name": "MSI GS76 Stealth",
+    "price": 34777.8889,
+    "has_stock": 1
+  },
+  {
+    "pid": 124,
+    "description": "XPS 15 完美平衡尺寸與效能二項需求，為更需要創意的專案提供動力。第 12 代 Intel Core 處理器",
+    "image_url": "https://astringo-rugged.com/wp-content/uploads/2023/04/New-Project-49.png",
+    "name": "Dell XPS 15 9520",
+    "price": 30012.2415,
+    "has_stock": 99
+  },
+  {
+    "pid": 125,
+    "description": "XPS 13 Plus 新系列的近無框介面簡化了整體設計, 搭載第 12 代 Intel Core 處理器及最新電池技術",
+    "image_url": "https://infotekph.com/wp-content/uploads/2023/02/dell-dell-xps-13-plus-9320-i5-8gb-512gb-platinum-o.png",
+    "name": "Dell XPS 13 Plus",
+    "price": 19680.1111,
+    "has_stock": 0
+  },
+  {
+    "pid": 126,
+    "description": "Intel AI Boost NPU & Intel Evo Platform",
+    "image_url": "https://dlcdnwebimgs.asus.com/gain/93e3d7da-f4f9-4d56-a0d8-af06ce4a3864/?undefined",
+    "name": "ASUS Zenbook 14 OLED 14吋",
+    "price": 13980.0000,
+    "has_stock": 50
+  },
+  {
+    "pid": 127,
+    "description": "ThinkPad P15V 酷睿版15.6英寸T1200獨顯4G I7-12800H (32+1TB)",
+    "image_url": "https://p4-ofp.static.pub/fes/cms/2023/02/07/5whxpqvv61m67actaa74iqwk9k8pxp643177.png",
+    "name": "Lenovo ThinkPad P15V 15.6吋",
+    "price": 14471.2000,
+    "has_stock": 30
+  },
+  {
+    "pid": 128,
+    "description": "Zenbook Pro 16X 配備了華碩的 ASUS Dial 旋鈕在觸控板左上角，並且有著 per-key 的 RGB 燈光，可以視情境展示不同的燈光特效",
+    "image_url": "https://dlcdnwebimgs.asus.com/gain/6ed14ba0-08ec-4668-b9b5-ac79900e2a7a/w800",
+    "name": "ASUS Zenbook Pro 16X OLED",
+    "price": 23580.0000,
+    "has_stock": 40
+  },
+  {
+    "pid": 129,
+    "description": "13.4 FHD+ (1920 x 1200), 120Hz, Touch",
+    "image_url": "https://storage-asset.msi.com/global/picture/image/feature/nb/Summit/Summit_E13_Flip_Evo_A12M/images/EVO-cpu.png",
+    "name": "MSI Summit E13 Flip EVO",
+    "price": 9999.9999,
+    "has_stock": 99
+  },
+  {
+    "pid": 130,
+    "description": "240Hz, Intel Ultra 7-155H, 32GB+2TB SSD, RTX4060",
+    "image_url": "https://storage-asset.msi.com/global/picture/image/feature/nb/2023_RPLS/Stealth-16-AI-Studio-A1V/msi-stealth16-ai-ultra9-laptop-v1.png",
+    "name": "MSI Stealth 16 Studio AI",
+    "price": 20499.0000,
+    "has_stock": 500
+  }
+]
