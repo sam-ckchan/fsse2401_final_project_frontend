@@ -9,7 +9,7 @@ import {useLoginUserContext} from "../../../context/LoginUserProvider.tsx";
 import {Backdrop, CircularProgress} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
-const ShoppingCartPage = () => {
+export const ShoppingCartPage = () => {
     const [cartItems, setCartItems] = useState<GetCartItemDto[] | undefined>(undefined)
     const [isBackdropOpen, setIsBackdropOpen] = useState(false);
 
@@ -56,5 +56,3 @@ const ShoppingCartPage = () => {
         </>
     );
 };
-
-export default ShoppingCartPage;

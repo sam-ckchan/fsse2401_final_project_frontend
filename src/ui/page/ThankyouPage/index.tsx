@@ -3,14 +3,22 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {useCartItemContext} from "../../../context/CartItemProvider.tsx";
+import bgImgUrl from "../../../assets/crewcut_poster.jpg"
 
+const timeOutValue = 5
 const ThankyouPage = () => {
-    const [second, setSecond] = useState<number>(5)
+    const [second, setSecond] = useState<number>(timeOutValue)
+
+    const {setCartCount} = useCartItemContext()
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (second <= 0) navigate("/")
+        if (second === timeOutValue) setCartCount(0)
+        if (second <= 0) {
+            navigate("/")
+        }
         const timerId = setTimeout(
             () => setSecond(prevSec => prevSec - 1),
             1000
@@ -24,7 +32,7 @@ const ThankyouPage = () => {
             <Box
                 sx={{
                     textAlign: "center",
-                    backgroundImage: 'url(https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/428682366_18016185383157723_2642410493154053121_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=H96bRhsrV6cAb4wW4uM&_nc_ht=scontent-hkg1-1.xx&oh=00_AfBP1WSRvylzyVaNtE5Jg_D5WgSwFUetzexTroUz2-_Z-Q&oe=662EDEA7)',
+                    backgroundImage: `url(${bgImgUrl})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -39,4 +47,4 @@ const ThankyouPage = () => {
     );
 };
 
-export default ThankyouPage;
+export {ThankyouPage};

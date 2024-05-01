@@ -9,6 +9,7 @@ import OutOfStockCartIcon from "../OutOfStockCartIcon";
 import {DescContainer} from "../DescContainer";
 import {useNavigate} from "react-router-dom";
 import {SyntheticEvent} from "react";
+import "./styles.css"
 
 export default function ProductCard({name, price, description, image_url, has_stock, pid}: GetAllProductsDto) {
     const navigate = useNavigate()
@@ -39,12 +40,9 @@ export default function ProductCard({name, price, description, image_url, has_st
             </CardActionArea>
             <CardActions sx={{justifyContent: "space-between"}}>
                 {has_stock
-                    ? <ClickableCartIcon pid={pid} />
+                    ? <ClickableCartIcon pid={pid}/>
                     : <OutOfStockCartIcon/>}
-                <Typography variant="body2" color="info" onClick={e => {
-                    console.log(e.currentTarget)
-                    e.stopPropagation()
-                }}>
+                <Typography variant="body2" color="info" onClick={e => e.stopPropagation()}>
                     $ {price.toLocaleString()}
                 </Typography>
             </CardActions>

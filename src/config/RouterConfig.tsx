@@ -1,41 +1,56 @@
 import {createBrowserRouter} from "react-router-dom";
-import ProductListingPage from "../ui/page/ProductListPage";
 import BadRequestPage from "../ui/page/BadRequestPage";
-import ProductDetailPage from "../ui/page/ProductDetailPage";
-import LoginPage from "../ui/page/LoginPage";
-import ShoppingCartPage from "../ui/page/ShoppingCartPage";
-import CheckoutPage from "../ui/page/CheckoutPage";
-import ThankyouPage from "../ui/page/ThankyouPage";
+
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <ProductListingPage/>,
+        async lazy() {
+            const {ProductListPage} = await import("../ui/page/ProductListPage");
+            return {Component: ProductListPage};
+        },
         errorElement: <BadRequestPage/>
     },
     {
         path: "/product/:productId",
-        element: <ProductDetailPage/>,
+        async lazy() {
+            const {ProductDetailPage} = await import("../ui/page/ProductDetailPage");
+            return {Component: ProductDetailPage};
+        },
         errorElement: <BadRequestPage/>
     },
     {
         path: "/shoppingcart",
-        element: <ShoppingCartPage/>,
+        lazy: async function () {
+            const {ShoppingCartPage} = await import("../ui/page/ShoppingCartPage")
+            return {Component: ShoppingCartPage}
+        },
         errorElement: <BadRequestPage/>
     },
     {
         path: "/login",
-        element: <LoginPage/>,
+        async lazy() {
+            const {LoginPage} = await import("../ui/page/LoginPage")
+            return {Component: LoginPage}
+        },
         errorElement: <BadRequestPage/>
     },
     {
         path: "/checkout/:transactionId",
-        element: <CheckoutPage/>,
+        async lazy() {
+            const {CheckoutPage} = await import("../ui/page/CheckoutPage")
+            return {Component: CheckoutPage}
+        },
         errorElement: <BadRequestPage/>
     },
     {
         path: "/thankyou",
-        element: <ThankyouPage/>
+        lazy: async function () {
+            const {ThankyouPage} = await import("../ui/page/ThankyouPage")
+            return {Component: ThankyouPage}
+        },
+        errorElement: <BadRequestPage/>
+
     },
     {
         path: "/error",

@@ -1,0 +1,6 @@
+.MuiCard-root:hover {
+    .MuiCardMedia-img {
+        transform: scale(1.5);
+        transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+}

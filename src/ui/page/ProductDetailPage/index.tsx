@@ -11,7 +11,7 @@ import "./styles.css"
 
 type ProductDetailPageParam = { productId: string }
 
-const ProductDetailPage = () => {
+export const ProductDetailPage = () => {
     const {productId} = useParams<ProductDetailPageParam>()
     const navigate = useNavigate()
 
@@ -48,5 +48,3 @@ const ProductDetailPage = () => {
         </>
     )
 }
-
-export default ProductDetailPage;

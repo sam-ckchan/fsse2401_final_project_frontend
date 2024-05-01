@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 import ScrollToTopBtn from "../../component/ScrollToTopBtn";
 import ProductCarousel from "./ProductCarousel";
 
-export default function ProductListPage() {
+export function ProductListPage() {
     const [products, setProducts] = useState<GetAllProductsDto[] | undefined>(undefined)
     const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ export default function ProductListPage() {
     return (
         <div id="back-to-top-anchor">
             <NavbarTop/>
-            <Container sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+            <Container sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <ProductCarousel products={products}/>
                 <Grid container rowSpacing={4} columnSpacing={1}
                       columns={{xs: 2, sm: 12, md: 12}}>
@@ -47,10 +47,14 @@ export default function ProductListPage() {
         </div>
     )
 }
+
 const renderSkeleton = () => (
     <>
         <NavbarTop/>
         <Container>
+            <Container sx={{display: "flex", flexDirection: "column", alignItems: "center", mb: 1}}>
+                <Skeleton variant="rounded" animation="wave" width={600} height={600}/>
+            </Container>
             <Grid container rowSpacing={4} columnSpacing={1}
                   columns={{xs: 2, sm: 12, md: 12}}>
                 {Array(10).fill(0).map((_, i) => (

@@ -7,14 +7,24 @@ import '@fontsource/roboto/700.css';
 import './App.css'
 import {LoginUserProvider} from "./context/LoginUserProvider.tsx";
 import {CartItemProvider} from "./context/CartItemProvider.tsx";
+import {ThemeProvider} from "@mui/material";
+import {theme} from "./context/ThemeContext.tsx"
+import {Suspense} from "react";
+import GradientCircularProgress from "./ui/component/GradientCircularProgress";
 
 
 export default function App() {
     return (
         <LoginUserProvider>
             <CartItemProvider>
-                <RouterProvider router={router}/>
+                <ThemeProvider theme={theme}>
+                    <Suspense fallback={<GradientCircularProgress size={"10rem"}/>}>
+                        <RouterProvider router={router}/>
+                    </Suspense>
+                </ThemeProvider>
             </CartItemProvider>
         </LoginUserProvider>
     )
 }
+
+// <Suspense> lets you display a fallback until its children have finished loading.

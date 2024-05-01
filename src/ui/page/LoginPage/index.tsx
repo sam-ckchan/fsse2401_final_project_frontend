@@ -18,6 +18,7 @@ import {useLoginUserContext} from "../../../context/LoginUserProvider.tsx";
 import {GoogleLoginButton} from "react-social-login-buttons";
 import {Divider} from "@mui/material";
 import {StyledRDDLink} from "../../component/StyledRDDLink";
+import bgImgUrl from "../../../assets/crewcut_poster.jpg"
 
 
 const googleLoginBtnStyle = {
@@ -31,7 +32,7 @@ const defaultFormFields = {
     password: "",
 };
 
-export default function LoginPage() {
+export function LoginPage() {
     const [formFields, setFormFields] = useState(defaultFormFields)
     const [isSnackbarOpen, setIsSnackbarOpen] = useState(false)
     const {email, password} = formFields
@@ -63,7 +64,7 @@ export default function LoginPage() {
                 <Grid
                     item xs={false} sm={4} md={7}
                     sx={{
-                        backgroundImage: 'url(https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/428682366_18016185383157723_2642410493154053121_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=H96bRhsrV6cAb4wW4uM&_nc_ht=scontent-hkg1-1.xx&oh=00_AfBP1WSRvylzyVaNtE5Jg_D5WgSwFUetzexTroUz2-_Z-Q&oe=662EDEA7)',
+                        backgroundImage: `url(${bgImgUrl})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
@@ -161,7 +162,7 @@ export default function LoginPage() {
             </Grid>
             : <Grid container sx={{
                 height: '91vh', mt: -3,
-                backgroundImage: 'url(https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/428682366_18016185383157723_2642410493154053121_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=H96bRhsrV6cAb4wW4uM&_nc_ht=scontent-hkg1-1.xx&oh=00_AfBP1WSRvylzyVaNtE5Jg_D5WgSwFUetzexTroUz2-_Z-Q&oe=662EDEA7)',
+                backgroundImage: `url(${bgImgUrl})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',

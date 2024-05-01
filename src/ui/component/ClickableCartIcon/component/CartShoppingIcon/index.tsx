@@ -28,7 +28,7 @@ export const CartShoppingIcon = ({style, setIsDrawerOpen}: AdditionProps) => {
                 <FontAwesomeIcon
                     icon={faCartShopping}
                     size="lg"
-                    style={{color: "#729cfd", cursor: "pointer", ...style}}
+                    style={{color: "white", cursor: "pointer", ...style}}
                     shake={shake}
                 />
             </StyledBadge>

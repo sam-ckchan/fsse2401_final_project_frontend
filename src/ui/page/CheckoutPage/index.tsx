@@ -12,7 +12,7 @@ import {useLoginUserContext} from "../../../context/LoginUserProvider.tsx";
 
 type CheckoutPageParams = { transactionId: string }
 
-export default function CheckoutPage() {
+export function CheckoutPage() {
     const [transaction, setTransaction] = useState<GetTransactionDto | undefined>(undefined)
 
     const {transactionId: tid} = useParams<CheckoutPageParams>()
