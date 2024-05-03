@@ -22,7 +22,7 @@ export const handleSignInWithEmailAndPassword = async (email: string, password: 
     try {
         const auth = getAuth();
         await signInWithEmailAndPassword(auth, email, password);
-        // Signed in
+        // Sign in success
         return true;
     } catch (error) {
         console.log(error);
@@ -36,7 +36,7 @@ export const handleSignInWithGoogle = async (): Promise<boolean> => {
         const provider = new GoogleAuthProvider();
         const auth = getAuth();
         await signInWithPopup(auth, provider);
-        // Signed in
+        // Sign in success
         return true;
     } catch (error) {
         console.log(error);

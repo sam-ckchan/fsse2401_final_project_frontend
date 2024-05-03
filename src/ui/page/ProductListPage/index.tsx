@@ -7,10 +7,14 @@ import {GetAllProductsDto} from "../../../data/products/products.type.ts";
 import * as productApi from "../../../api/productApi.ts"
 import {useNavigate} from "react-router-dom";
 import ScrollToTopBtn from "../../component/ScrollToTopBtn";
-import ProductCarousel from "./ProductCarousel";
+import ProductCarousel from "./component/ProductCarousel";
+import PriceSlider from "./component/PriceSlider";
+import {maxStep} from "../../../data/products/productsSliderMarks.ts";
 
 export function ProductListPage() {
     const [products, setProducts] = useState<GetAllProductsDto[] | undefined>(undefined)
+    const [sliderVal, setSliderVal] = useState(maxStep)
+
     const navigate = useNavigate();
 
     const fetchAllProduct = async () => {
@@ -23,20 +27,21 @@ export function ProductListPage() {
     }
     useEffect(() => {
         fetchAllProduct().catch() //stop promise chain by handling promise with catch
-        // // mock-data
-        // setProducts(mockProducts)
     }, []);
 
     if (!products) return renderSkeleton();
+
+    const filteredProducts = products.filter(product => product.price <= sliderVal)
 
     return (
         <div id="back-to-top-anchor">
             <NavbarTop/>
             <Container sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <ProductCarousel products={products}/>
+                <PriceSlider setSliderVal={setSliderVal} sliderVal={sliderVal}/>
                 <Grid container rowSpacing={4} columnSpacing={1}
                       columns={{xs: 2, sm: 12, md: 12}}>
-                    {products.map((product) => (
+                    {filteredProducts.map((product) => (
                         <Grid item xs={1} sm={4} md={3} key={product.pid}>
                             <ProductCard {...product}/>
                         </Grid>

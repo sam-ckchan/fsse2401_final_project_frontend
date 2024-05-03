@@ -24,7 +24,7 @@ export const CartShoppingIcon = ({style, setIsDrawerOpen}: AdditionProps) => {
 
     return (
         <IconButton onClick={handleClick} sx={{...style}}>
-            <StyledBadge badgeContent={cartCount} color="success" showZero>
+            <StyledBadge badgeContent={cartCount} showZero>
                 <FontAwesomeIcon
                     icon={faCartShopping}
                     size="lg"
@@ -42,5 +42,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({theme}) => ({
         top: 19,
         border: `2px solid ${theme.palette.background.paper}`,
         padding: '0 4px',
+        color: "white",
+        backgroundColor: "#237804"
     },
 }));

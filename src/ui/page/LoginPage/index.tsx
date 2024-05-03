@@ -45,12 +45,22 @@ export function LoginPage() {
         event.preventDefault();
         const isSuccess = await FirebaseAuthService.handleSignInWithEmailAndPassword(email, password)
         if (isSuccess) {
-            navigate("/")
+            navigate(-1)
         } else {
             setIsSnackbarOpen(true)
         }
         setFormFields(defaultFormFields)
     };
+
+    const handleGoogleSignIn = async () => {
+        const isSuccess = await FirebaseAuthService.handleSignInWithGoogle()
+        if (isSuccess) {
+            navigate(-1)
+        } else {
+            setIsSnackbarOpen(true)
+        }
+        setFormFields(defaultFormFields)
+    }
 
     const handleClose = () => {
         setIsSnackbarOpen(false);
@@ -127,7 +137,7 @@ export function LoginPage() {
                             <Divider sx={{my: 1.5}}/>
                             <GoogleLoginButton
                                 style={googleLoginBtnStyle}
-                                onClick={FirebaseAuthService.handleSignInWithGoogle}
+                                onClick={handleGoogleSignIn}
                             />
                             <Snackbar
                                 open={isSnackbarOpen}
