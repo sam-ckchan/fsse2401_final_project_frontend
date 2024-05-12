@@ -5,16 +5,24 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useCartItemContext} from "../../../context/CartItemProvider.tsx";
 import bgImgUrl from "../../../assets/crewcut_poster.jpg"
+import {useLoginUserContext} from "../../../context/LoginUserProvider.tsx";
 
 const timeOutValue = 5
+
 const ThankyouPage = () => {
     const [second, setSecond] = useState<number>(timeOutValue)
 
     const {setCartCount} = useCartItemContext()
 
+    const loginUser = useLoginUserContext()
+
     const navigate = useNavigate();
 
     useEffect(() => {
+        if (!loginUser) {
+            console.warn("authentication required")
+            navigate("/error")
+        }
         if (second === timeOutValue) setCartCount(0)
         if (second <= 0) {
             navigate("/")

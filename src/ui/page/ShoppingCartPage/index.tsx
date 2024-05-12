@@ -25,7 +25,7 @@ export const ShoppingCartPage = () => {
             setCartItems(newCartItems)
         } catch (err) {
             if ((err as Error).message.includes("authentication required"))
-                navigate("/")
+                navigate("/error")
         }
     }
 
