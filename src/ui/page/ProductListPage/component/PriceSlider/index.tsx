@@ -19,8 +19,8 @@ export default function PriceSlider({setSliderVal, sliderVal}: Props) {
 
     return (
         <Box sx={{width: 300}}>
-            <Typography gutterBottom>
-                Price Below: ${sliderVal}
+            <Typography align="center" mb={4} variant="h5">
+                Price below: ${sliderVal}
             </Typography>
             <Slider
                 defaultValue={maxStep}

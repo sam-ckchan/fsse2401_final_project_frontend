@@ -1,5 +1,4 @@
 import Carousel from "react-material-ui-carousel";
-import Paper from "@mui/material/Paper";
 import {GetAllProductsDto} from "../../../../../data/products/products.type.ts";
 import {useMediaQuery} from "@mui/material";
 
@@ -10,17 +9,17 @@ type CarouselItemProps = { image_url: string }
 function Item({image_url}: CarouselItemProps) {
     const isSmallScreen = useMediaQuery('(max-width:620px)');
     return (
-        <Paper>
+        <div style={{backgroundColor: "transparent"}}>
             <img src={image_url} alt="product-slide"
                  style={{
                      width: isSmallScreen ? "300px" : "600px",
                      height: isSmallScreen ? "300px" : "600px",
                      backgroundSize: "cover",
                      backgroundRepeat: "no-repeat",
-                     backgroundPosition: "center"
+                     backgroundPosition: "center",
                  }}
             />
-        </Paper>
+        </div>
     )
 }
 

@@ -10,6 +10,7 @@ import ScrollToTopBtn from "../../component/ScrollToTopBtn";
 import ProductCarousel from "./component/ProductCarousel";
 import PriceSlider from "./component/PriceSlider";
 import {maxStep} from "../../../data/products/productsSliderMarks.ts";
+import "./styles.css"
 
 export function ProductListPage() {
     const [products, setProducts] = useState<GetAllProductsDto[] | undefined>(undefined)
@@ -36,8 +37,22 @@ export function ProductListPage() {
     return (
         <div id="back-to-top-anchor">
             <NavbarTop/>
+            <Container
+                maxWidth={false}
+                sx={{display: "flex", justifyContent: "center", mt: -3, pt: 3}}
+                className="video-container"
+            >
+                <video autoPlay muted loop>
+                    <source
+                        src="https://fsse2401-project-sam.s3.ap-southeast-1.amazonaws.com/myAssetHosting/mixkit-bubbles-of-water-rising-to-the-surface-186-medium.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+                <ProductCarousel
+                    products={products}
+                />
+            </Container>
             <Container sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-                <ProductCarousel products={products}/>
                 <PriceSlider setSliderVal={setSliderVal} sliderVal={sliderVal}/>
                 <Grid container rowSpacing={4} columnSpacing={1}
                       columns={{xs: 2, sm: 12, md: 12}}>
