@@ -42,7 +42,7 @@ export function ProductListPage() {
                 sx={{display: "flex", justifyContent: "center", mt: -3, pt: 3}}
                 className="video-container"
             >
-                <video autoPlay muted loop>
+                <video autoPlay muted loop playsInline>
                     <source
                         src="https://fsse2401-project-sam.s3.ap-southeast-1.amazonaws.com/myAssetHosting/mixkit-bubbles-of-water-rising-to-the-surface-186-medium.mp4"
                         type="video/mp4"
